@@ -13,7 +13,7 @@ public class Solution {
 
     public Solution() {
         try {
-            this.input = input(Path.of("src/main/java/com/murismo/solution/day_one/input.txt").toAbsolutePath());
+            this.input = input(Path.of("src/main/java/com/murismo/solution/day_one/inputs/input.txt").toAbsolutePath());
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(1);
