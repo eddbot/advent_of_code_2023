@@ -8,3 +8,4 @@ Solutions (__SPOILERS!__)
 | 2  | [Java](https://github.com/eddbot/advent_of_code_2023/blob/main/src/main/java/com/murismo/solution/day_two/Solution.java)  | relatively straightforward, nice chilled Saturday :)  |
 | 3  | [Go](https://github.com/eddbot/advent_of_code_2023/blob/main/go/day_3/main.go) | first attempt was completely arse-about-face. Had a walk and a strong coffee and got it done lol  |
 | 4  | [Go](https://github.com/eddbot/advent_of_code_2023/blob/main/go/day_4/main.go) | part 1 was simple enough, part 2 was ok too tbh - always struggle with recursive problems so quite happy that I cracked it relatively quickly :) |
+| 5 | [C#](https://github.com/eddbot/advent_of_code_2023/blob/main/dotnet/day_5/Program.cs) | part 1 was noice, got a decent range based solution that solved in <1ms... part 2 miscalculated how long the brute force should run for, which cost me a *lot* of time debugging 😰 If in doubt just keep it running :) |
