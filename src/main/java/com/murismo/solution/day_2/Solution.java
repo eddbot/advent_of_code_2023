@@ -1,4 +1,4 @@
-package com.murismo.solution.day_two;
+package com.murismo.solution.day_2;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,7 +10,7 @@ public class Solution {
 
     public Solution() {
         try {
-            this.input = input(Path.of("src/main/java/com/murismo/solution/day_two/inputs/input.txt").toAbsolutePath());
+            this.input = input(Path.of("src/main/java/com/murismo/solution/day_2/inputs/input.txt").toAbsolutePath());
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(1);

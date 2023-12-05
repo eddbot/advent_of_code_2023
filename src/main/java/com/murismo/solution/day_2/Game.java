@@ -1,4 +1,4 @@
-package com.murismo.solution.day_two;
+package com.murismo.solution.day_2;
 
 import java.util.Arrays;
 import java.util.Comparator;

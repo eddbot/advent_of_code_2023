@@ -1,4 +1,4 @@
-package com.murismo.solution.day_one;
+package com.murismo.solution.day_1;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,7 +14,7 @@ public class Solution {
 
     public Solution() {
         try {
-            this.input = input(Path.of("src/main/java/com/murismo/solution/day_one/inputs/input.txt").toAbsolutePath());
+            this.input = input(Path.of("src/main/java/com/murismo/solution/day_1/inputs/input.txt").toAbsolutePath());
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(1);
@@ -51,27 +51,39 @@ public class Solution {
     }
 
     private int numAndWordParser(String line) {
-        var pattern = Pattern.compile("(?=(one|1|two|2|three|3|four|4|five|5|six|6|seven|7|eight|8|nine|9))",
-                Pattern.MULTILINE);
-        var matcher = pattern.matcher(line);
-        var results = matcher.results().map(result -> wordToNum(result.group(1))).toList();
-        return results.getFirst() * 10 + results.getLast();
+        var numbers = new ArrayList<String>();
+
+        for (int i = 0; i < line.length(); i++) {
+            for (int j = i + 1; j <= line.length(); j++) {
+                var num = this.mapper.get(line.substring(i, j));
+                if (num != null) {
+                    numbers.add(num);
+                    break;
+                }
+            }
+        }
+        return Integer.parseInt(numbers.getFirst() + numbers.getLast());
     }
 
-    private int wordToNum(String word) {
-        return switch (word) {
-            case "one" -> 1;
-            case "two" -> 2;
-            case "three" -> 3;
-            case "four" -> 4;
-            case "five" -> 5;
-            case "six" -> 6;
-            case "seven" -> 7;
-            case "eight" -> 8;
-            case "nine" -> 9;
-            default -> Integer.parseInt(word);
-        };
-    }
+    private final Map<String, String> mapper = Map.ofEntries(
+            Map.entry("one", "1"),
+            Map.entry("two", "2"),
+            Map.entry("three", "3"),
+            Map.entry("four", "4"),
+            Map.entry("five", "5"),
+            Map.entry("six", "6"),
+            Map.entry("seven", "7"),
+            Map.entry("eight", "8"),
+            Map.entry("nine", "9"),
+            Map.entry("1", "1"),
+            Map.entry("2", "2"),
+            Map.entry("3", "3"),
+            Map.entry("4", "4"),
+            Map.entry("5", "5"),
+            Map.entry("6", "6"),
+            Map.entry("7", "7"),
+            Map.entry("8", "8"),
+            Map.entry("9", "9"));
 
     private List<String> input(Path path) throws IOException {
 

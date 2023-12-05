@@ -1,6 +1,6 @@
 package com.murismo;
 
-import com.murismo.solution.day_two.Solution;
+import com.murismo.solution.day_1.Solution;
 
 public class Main {
     public static void main(String[] args) {
