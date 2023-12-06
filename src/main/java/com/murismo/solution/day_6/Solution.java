@@ -35,11 +35,8 @@ public class Solution {
     private int speedCalculator(Race race){
         var records = 0;
 
-        for(int t = 0; t <= race.time; t++){
-            long holdingTime = race.time - t;
-            long remainingTime = race.time - holdingTime;
-            long distanceTravelled = remainingTime * holdingTime;
-            if(distanceTravelled > race.distance){
+        for(int t = (int)race.time; t > 0; t--){
+            if((race.time - t) * t > race.distance){
                 records++;
             }
         }
