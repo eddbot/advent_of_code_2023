@@ -27,14 +27,16 @@ func (ph *PokerHand) assignRankWithWildCards() {
 			jMask[i] = true
 		}
 	}
-	// how to generate all sequences?
-
 	str := []string{}
 
 	for _, s := range ph.cards {
 		str = append(str, s)
 
 	}
+
+	// what a muppet
+
+	// need to fix this ASAP
 
 	for a := range cardConv {
 		for b := range cardConv {
