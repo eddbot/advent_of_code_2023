@@ -1,54 +1,54 @@
-input = File.read("input.txt").split("\n\n")
+# frozen_string_literal: true
+
+input = File.read('./inputs/input.txt').split("\n\n")
 
 instructions = input.first
 
 Node = Struct.new(:val, :left, :right, :rawL, :rawR)
 
 raw_nodes = input.last.split("\n").each_with_object({}) do |node, hsh|
-  n = node.gsub(" ", "").split(/\W/)
+  n = node.gsub(' ', '').split(/\W/)
   hsh[n[0]] = Node.new(n[0], nil, nil, n[2], n[3])
 end
 
-raw_nodes.each do |k,v|
+raw_nodes.each_value do |v|
   v.left = raw_nodes[v.rawL]
   v.right = raw_nodes[v.rawR]
 end
 
-starting_node = "AAA"
+starting_node = 'AAA'
 
 # part 1
 counter = 0
-instructions.split("").cycle do |i|
-  break if starting_node == "ZZZ"
+instructions.split('').cycle do |i|
+  break if starting_node == 'ZZZ'
 
-  starting_node = raw_nodes[starting_node].left.val if i == "L"
-  starting_node = raw_nodes[starting_node].right.val if i == "R"
+  starting_node = raw_nodes[starting_node].left.val if i == 'L'
+  starting_node = raw_nodes[starting_node].right.val if i == 'R'
   counter += 1
 end
 
 puts "part 1 = #{counter}"
 
-
 # part 2
-starting_nodes = raw_nodes.keys.filter {|k| k.end_with?("A") }
-target = starting_node.size
+starting_nodes = raw_nodes.keys.filter { |k| k.end_with?('A') }
+starting_node.size
 
 routes = []
 
 starting_nodes.each do |starting_node|
+  counter = 0
+  instructions.split('').cycle do |i|
+    break if starting_node.end_with?('Z')
 
-counter = 0
-instructions.split("").cycle do |i|
-  break if starting_node.end_with?("Z")
+    starting_node = raw_nodes[starting_node].left.val if i == 'L'
+    starting_node = raw_nodes[starting_node].right.val if i == 'R'
 
-  starting_node = raw_nodes[starting_node].left.val if i == "L"
-  starting_node = raw_nodes[starting_node].right.val if i == "R"
-
-  counter+= 1
+    counter += 1
   end
 
-routes << counter
-counter = 0
+  routes << counter
+  counter = 0
 end
 
-puts "part 2 = #{routes.reduce(1) {|acc, n| acc.lcm(n) }}"
+puts "part 2 = #{routes.reduce(1) { |acc, n| acc.lcm(n) }}"
