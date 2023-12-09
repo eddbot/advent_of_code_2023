@@ -1,5 +1,6 @@
-answer = File.readlines("input.txt").map do |line|
+# frozen_string_literal: true
 
+answer = File.readlines('inputs/input.txt').map do |line|
   # part 1
   # seq = line.split.map(&:to_i)
 
@@ -9,18 +10,13 @@ answer = File.readlines("input.txt").map do |line|
   ans = seq.last
   diff = []
 
-  while seq.uniq.size != 1 do
-    updated = []
-    seq.each_cons(2).each do |pair|
-
-      updated << pair.last - pair.first
-
-    end
-    seq = updated
+  while seq.uniq.size != 1
+    seq = seq.each_cons(2).each_with_object([]) { |pair, arr| arr << pair.last - pair.first }
     diff << seq.last
-
   end
+
   ans + diff.sum
+
 end.sum
 
-p answer
+puts answer
