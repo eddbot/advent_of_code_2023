@@ -13,3 +13,4 @@ Solutions (__SPOILERS!__)
 | 7 | [Go](https://github.com/eddbot/advent_of_code_2023/blob/main/go/day_7/main.go) | honestly embarrassed by the brute force on this one :D - my excuse was that I was working in a loud co-working space so couldn't concentrate 😅 |
 | 8 | [Ruby](https://github.com/eddbot/advent_of_code_2023/blob/main/ruby/day_8/solution.rb) | ahh back to Ruby, makes parsing things sooo much simpler :) needed a little hint on part 2, but on the whole it went quite smoothly |
 | 9 | [Ruby](https://github.com/eddbot/advent_of_code_2023/blob/main/ruby/day_9/solution.rb)| Quite happy with todays solution as knocked it out in 20 mins :D - the best part was I just needed a little trick to solve part 2 🙂 |
+| 10 | [Java](https://github.com/eddbot/advent_of_code_2023/blob/main/src/main/java/com/murismo/solution/day_10/Solution.java)| currently just part one - WIP ;) |
