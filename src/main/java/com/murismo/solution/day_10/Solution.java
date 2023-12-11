@@ -33,47 +33,52 @@ public class Solution {
         }
     }
 
-    public void solve() {
+    public void solve(){
+        System.out.println("Part 1=" + partOne());
+        // partTwo();
+    }
+
+    private int partOne() {
         // hardcoded as i'm scum :)
         int i = 42;
         int j = 8;
 
-        while(true){
+        while (true) {
             counter++;
             visited[i][j] = true;
             gfx[i][j] = "x";
             String pipe = grid.get(i).get(j);
 
-            if((pipe.equals("F") || pipe.equals("7") || pipe.equals("|")) && !visited[i+1][j]){
-                i+=1;
+            if ((pipe.equals("F") || pipe.equals("7") || pipe.equals("|")) && !visited[i + 1][j]) {
+                i += 1;
                 continue;
             }
 
-            if((pipe.equals("|") || pipe.equals("J") || pipe.equals("L")) && !visited[i-1][j]){
-                i-=1;
+            if ((pipe.equals("|") || pipe.equals("J") || pipe.equals("L")) && !visited[i - 1][j]) {
+                i -= 1;
                 continue;
             }
 
-            if((pipe.equals("-") || pipe.equals("L") || pipe.equals("F")) && !visited[i][j+1]){
-                j+=1;
+            if ((pipe.equals("-") || pipe.equals("L") || pipe.equals("F")) && !visited[i][j + 1]) {
+                j += 1;
                 continue;
             }
 
-            if((pipe.equals("J") || pipe.equals("-") || pipe.equals("7")) && !visited[i][j-1]){
-                j-=1;
+            if ((pipe.equals("J") || pipe.equals("-") || pipe.equals("7")) && !visited[i][j - 1]) {
+                j -= 1;
                 continue;
             }
 
-            System.out.println(counter/2);
-            break;
+            // if we get here the pipe is complete :)
+            return counter/2;
         }
-
-        partTwo();
     }
 
     private void partTwo(){
 
         for(var line : gfx){
+
+            // how do we figure this out? :)
             System.out.println(Arrays.toString(line));
         }
     }
