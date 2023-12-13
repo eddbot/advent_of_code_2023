@@ -14,3 +14,6 @@ Solutions (__SPOILERS!__)
 | 8 | [Ruby](https://github.com/eddbot/advent_of_code_2023/blob/main/ruby/day_8/solution.rb) | ahh back to Ruby, makes parsing things sooo much simpler :) needed a little hint on part 2, but on the whole it went quite smoothly |
 | 9 | [Ruby](https://github.com/eddbot/advent_of_code_2023/blob/main/ruby/day_9/solution.rb)| Quite happy with todays solution as knocked it out in 20 mins :D - the best part was I just needed a little trick to solve part 2 🙂 |
 | 10 | [Java](https://github.com/eddbot/advent_of_code_2023/blob/main/src/main/java/com/murismo/solution/day_10/Solution.java)| currently just part one - WIP ;) |
+| 11 | [Ruby](https://github.com/eddbot/advent_of_code_2023/blob/main/ruby/day_11/solution.rb)| Just part 1 again - overengineered a shortest path algorithm, which wasn't required.. makes part 2's runtime a _tad_ too long :D |
+| 12 | [?]()| Honestly really struggled with day 12, just couldn't even get my head around the problem to start with 😅 Will come back to it _soon_ ™️ |
+| 13 | [Go](https://github.com/eddbot/advent_of_code_2023/blob/main/go/day_13/main.go) | Part 1 in Go... Monitoring my fun levels, as these challenges are starting to tax me a little too much 😅. As long as i'm learning though, that's the main thing :) |
