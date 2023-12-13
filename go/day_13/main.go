@@ -51,13 +51,12 @@ func isReflected(board []string) int {
 				str1 := board[up]
 				str2 := board[down]
 
-				if str1 != str2 { // no reflect
+				if str1 != str2 {
 					break
 				}
 				up--
 				down++
 				if up < 0 || down >= len(board) {
-					// reflection found
 					return i
 
 				}
