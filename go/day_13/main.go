@@ -14,60 +14,52 @@ func main() {
 	total := 0
 
 	for _, line := range in {
-		y := reflectionPoint(non_flipped(line))
-		x := reflectionPoint(flipped(line))
-
-		if y > 0 {
-			total += (y * 100)
-		}
-		if x > 0 {
-			total += x
-		}
+		total += reflectionPoint(line)
 	}
 
 	fmt.Println(total)
 
-	for _, line := range in {
-
-		toEdit := []rune(line)
-		for i := 0; i < len(toEdit); i++ {
-
-			switch toEdit[i] {
-			case '#':
-				toEdit[i] = '.'
-			case '.':
-				toEdit[i] = '#'
-			case '\n':
-				continue
-			}
-
-			toEdit = []rune(line)
-		}
-
-	}
-
 }
 
-func reflectionPoint(board []string) int {
+func reflectionPoint(board string) int {
 
+	repeats := []int{}
+
+	columns := isReflected(non_flipped(board))
+
+	if columns != 0 {
+		repeats = append(repeats, columns*100)
+		return columns * 100
+	}
+
+	rows := isReflected(flipped(board))
+
+	if rows != 0 {
+		repeats = append(repeats, rows)
+		return rows
+	}
+
+	return 0
+}
+
+func isReflected(board []string) int {
 	for i := 1; i < len(board); i++ {
-
 		if board[i] == board[i-1] {
-
 			up := i - 1
 			down := i
-
 			for {
 				str1 := board[up]
 				str2 := board[down]
 
-				if str1 != str2 {
+				if str1 != str2 { // no reflect
 					break
 				}
 				up--
 				down++
 				if up < 0 || down >= len(board) {
+					// reflection found
 					return i
+
 				}
 			}
 		}
@@ -96,7 +88,7 @@ func flipped(board string) []string {
 
 func input() []string {
 
-	file, err := os.ReadFile("inputs/input.txt")
+	file, err := os.ReadFile("inputs/test_input.txt")
 
 	if err != nil {
 		panic(err)
