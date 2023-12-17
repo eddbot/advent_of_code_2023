@@ -9,9 +9,6 @@ public class Contraption {
     private final int HEIGHT;
     private final int WIDTH;
 
-
-    private int energised = 0;
-
     public Contraption(List<String> input) {
 
         HEIGHT = input.size();
@@ -30,13 +27,6 @@ public class Contraption {
         this.visited = visited;
     }
 
-    private void resetVisited() {
-        for (int i = 0; i < HEIGHT; i++) {
-            for (int j = 0; j < WIDTH; j++) {
-                this.visited[i][j] = "";
-            }
-        }
-    }
 
     private int energised() {
         var counter = 0;
@@ -52,6 +42,20 @@ public class Contraption {
         return counter;
     }
 
+    private void resetVisited() {
+        for (int i = 0; i < HEIGHT; i++) {
+            for (int j = 0; j < WIDTH; j++) {
+                this.visited[i][j] = "";
+            }
+        }
+    }
+
+    public void partOne() {
+        // we start at 0,0 and go right
+        beam(0, 0, 'R');
+
+        System.out.println(energised());
+    }
 
     public void partTwo() {
 
@@ -89,24 +93,6 @@ public class Contraption {
         System.out.println(best);
     }
 
-    public void on() {
-
-        // we start at 0,0 and go right
-        beam(0, 0, 'R');
-
-        var counter = 0;
-
-        for (String[] lines : visited) {
-            for (String line : lines) {
-                if (!line.isEmpty()) {
-                    counter++;
-                }
-            }
-        }
-        resetVisited();
-
-        System.out.println(counter);
-    }
 
     private void beam(int i, int j, char direction) {
         if (i < 0 || i >= grid.length || j < 0 || j >= grid.length) {
@@ -117,31 +103,8 @@ public class Contraption {
             return;
         }
 
-        var caret = switch (direction) {
-            case 'R' -> '>';
-            case 'L' -> '<';
-            case 'D' -> 'v';
-            case 'U' -> '^';
-            default -> throw new RuntimeException();
-        };
-
         var square = grid[i][j];
         visited[i][j] += direction;
-
-//        for (int k = 0; k < grid.length; k++) {
-//            for (int l = 0; l < grid[k].length; l++) {
-//
-//                if(k == i && j == l){
-//                    System.out.print(caret);
-//                } else {
-//                    System.out.print(grid[k][l]);
-//                }
-//            }
-//
-//            System.out.println();
-//
-//        }
-
 
         switch (square) {
             case '.' -> {

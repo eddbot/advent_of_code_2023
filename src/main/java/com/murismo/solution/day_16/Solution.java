@@ -21,7 +21,7 @@ public class Solution {
 
         var contraption = new Contraption(input);
 
-        contraption.on();
+        contraption.partOne();
         contraption.partTwo();
     }
 
