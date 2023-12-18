@@ -17,3 +17,6 @@ Solutions (__SPOILERS!__)
 | 11 | [Ruby](https://github.com/eddbot/advent_of_code_2023/blob/main/ruby/day_11/solution.rb)| Just part 1 again - overengineered a shortest path algorithm, which wasn't required.. makes part 2's runtime a _tad_ too long :D |
 | 12 | [?]()| Honestly really struggled with day 12, just couldn't even get my head around the problem to start with 😅 Will come back to it _soon_ ™️ |
 | 13 | [Go](https://github.com/eddbot/advent_of_code_2023/blob/main/go/day_13/main.go) | Part 1 in Go... Monitoring my fun levels, as these challenges are starting to tax me a little too much 😅. As long as i'm learning though, that's the main thing :) |
+| 14 | [Java](https://github.com/eddbot/advent_of_code_2023/blob/main/src/main/java/com/murismo/solution/day_14/Solution.java) | Part 1 in Java - a few wrinkles we need to iron out before attempting part 2 :) |
+| 15 | [Java](https://github.com/eddbot/advent_of_code_2023/blob/main/src/main/java/com/murismo/solution/day_15/Solution.java)| Part 1 in Java - again just part one as was a little hungover/busy hehe|
+| 16 | [Java](https://github.com/eddbot/advent_of_code_2023/blob/main/src/main/java/com/murismo/solution/day_16/Solution.java)| Part 1 and 2, had a bit of time on Sunday afternoon so managed to get both parts of this wrapped up :) |
