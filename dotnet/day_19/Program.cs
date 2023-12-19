@@ -32,11 +32,11 @@ var partOne = partMapper.ToList().Select(part =>
             {
                 var ops = rating.Split(":");
                 var partNumber = char.ToString(ops[0][0]);
-                var op = char.ToString(ops[0][1]);
+                var op = ops[0][1];
                 var val = int.Parse(ops[0][2..]);
                 var partValue = part[partNumber];
                 var match = false;
-                if (op == ">")
+                if (op == '>')
                 {
                     match = partValue > val;
                 }
