@@ -23,7 +23,7 @@ var partOne = partMapper.ToList().Select(part =>
 
         foreach (var rating in ratings)
         {
-            if (!rating.Contains(":"))
+            if (!rating.Contains(':'))
             {
                 catalogueNumber = rating;
                 break;
