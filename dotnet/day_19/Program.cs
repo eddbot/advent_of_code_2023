@@ -2,21 +2,18 @@
 
 var partMapper = input.Last().Split("\n").Select(part =>
 {
-    return part
-                .Replace("{", "")
-                .Replace("}", "")
-                .Split(",")
-                .ToDictionary(x => x.Split("=").First(), y => int.Parse(y.Split("=").Last()));
+    return part.Replace("{", "")
+               .Replace("}", "")
+               .Split(",")
+               .ToDictionary(x => x.Split("=").First(), y => int.Parse(y.Split("=").Last()));
 });
 
-var instructionMapper = input
-                            .First()
-                            .Split("\n")
-                            .ToDictionary(x => x.Split("{").First(), y => y.Split("{").Last().Replace("}", "").Split(","));
+var instructionMapper = input.First()
+                             .Split("\n")
+                             .ToDictionary(x => x.Split("{").First(), y => y.Split("{").Last().Replace("}", "").Split(","));
 
-var total = 0;
 
-partMapper.ToList().ForEach(part =>
+var total = partMapper.ToList().Select(part =>
 {
     var catalogueNumber = "in";
 
@@ -46,13 +43,11 @@ partMapper.ToList().ForEach(part =>
                 else
                 {
                     match = partValue < val;
-
                 }
                 if (match)
                 {
                     catalogueNumber = ops.Last();
                     break;
-
                 }
             }
         };
@@ -60,9 +55,10 @@ partMapper.ToList().ForEach(part =>
 
     if (catalogueNumber == "A")
     {
-        total += part.Values.Sum();
+        return part.Values.Sum();
     }
-});
+
+    return 0;
+}).Sum();
 
 Console.WriteLine($"Part one = {total}");
-
