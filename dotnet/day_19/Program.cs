@@ -13,7 +13,7 @@ var instructionMapper = input.First()
                              .ToDictionary(x => x.Split("{").First(), y => y.Split("{").Last().Replace("}", "").Split(","));
 
 
-var total = partMapper.ToList().Select(part =>
+var partOne = partMapper.ToList().Select(part =>
 {
     var catalogueNumber = "in";
 
@@ -61,4 +61,4 @@ var total = partMapper.ToList().Select(part =>
     return 0;
 }).Sum();
 
-Console.WriteLine($"Part one = {total}");
+Console.WriteLine($"Part one = {partOne}");
