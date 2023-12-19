@@ -46,7 +46,7 @@ var partOne = partMapper.ToList().Select(part =>
                 }
                 if (match)
                 {
-                    catalogueNumber = ops.Last();
+                    catalogueNumber = ops[1];
                     break;
                 }
             }
